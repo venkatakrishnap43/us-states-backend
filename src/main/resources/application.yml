@@ -1,0 +1,25 @@
+server:
+  port: 8099
+
+spring:
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:13306/states
+    username: root
+    password: test123
+  jpa:
+    properties:
+      hibernate:
+        jdbc:
+          batch_size: 2000
+        dialect: org.hibernate.dialect.MySQL5Dialect
+    hibernate:
+      ddl-auto: none
+  flyway:
+    locations: classpath:db/migration
+  jackson:
+    default-property-inclusion: "NON_NULL"
+    serialization:
+      write-dates-as-timestamps: false
+    deserialization:
+      fail-on-unknown-properties: false
